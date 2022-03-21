@@ -1,5 +1,6 @@
 // Standard headers
 #include <stdio.h>
+#include <stdlib.h>
 
 // Internal headers
 #include "direction.h"
@@ -16,6 +17,19 @@
 /*                              PUBLIC FUNCTIONS                              */
 /*----------------------------------------------------------------------------*/
 
+direction_t d_directions[] =  {
+  DIR_UP,
+  DIR_UP_RIGHT,
+  DIR_RIGHT,
+  DIR_DOWN_RIGHT,
+  DIR_DOWN,
+  DIR_DOWN_LEFT,
+  DIR_LEFT,
+  DIR_UP_LEFT
+};
+
+int d_number_of_directions = 8;
+
 direction_t execute_defender_strategy(
     position_t defender_position, Spy attacker_spy) {
   // TODO: unused parameters, remove these lines later
@@ -23,7 +37,11 @@ direction_t execute_defender_strategy(
   UNUSED(attacker_spy);
 
   // TODO: Implement Defender logic here
-  return DIR_LEFT;
+
+  int random_index = rand() % d_number_of_directions;
+  direction_t random_direction = d_directions[random_index];
+
+  return random_direction;
 }
 
 /*----------------------------------------------------------------------------*/
