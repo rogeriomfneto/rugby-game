@@ -24,7 +24,7 @@ Item new_item(char symbol, bool is_movable) {
 
   item->symbol = symbol;
   item->is_movable = is_movable;
-  item->position = (position_t){ 0, 0 };
+  item->position = (position_t) INVALID_POSITION;
 
   return item;
 }
@@ -55,7 +55,7 @@ char get_item_symbol(Item item) {
 /*----------------------------------------------------------------------------*/
 
 position_t get_item_position(Item item) {
-  if (item == NULL) return (position_t) { 0, 0 };
+  if (item == NULL) return (position_t) INVALID_POSITION;
   return item->position;
 }
 

@@ -33,14 +33,16 @@ void print_item_in_field(Item item);
 
 Field new_field(dimension_t dimension) {
   if (dimension.height < FIELD_MIN_DIMENSION.height) {
-    fprintf(stderr, "Height must be at least %ld because of the Field's borders\n",
-            FIELD_MIN_DIMENSION.height);
+    fprintf(stderr,
+        "Height must be at least %ld because of the Field's borders\n",
+        FIELD_MIN_DIMENSION.height);
     return NULL;
   }
 
   if (dimension.width < FIELD_MIN_DIMENSION.width) {
-    fprintf(stderr, "Width must be at least %ld because of the Field's borders\n",
-            FIELD_MIN_DIMENSION.width);
+    fprintf(stderr,
+        "Width must be at least %ld because of the Field's borders\n",
+        FIELD_MIN_DIMENSION.width);
     return NULL;
   }
 
@@ -60,7 +62,7 @@ void delete_field(Field field) {
   free_field_grid(field->grid, field->dimension);
   field->grid = NULL;
 
-  field->dimension = (dimension_t){ 0, 0 };
+  field->dimension = (dimension_t) NULL_DIMENSION;
 
   free(field);
 }
@@ -68,7 +70,7 @@ void delete_field(Field field) {
 /*----------------------------------------------------------------------------*/
 
 dimension_t get_field_dimension(Field field) {
-  if (field == NULL) return (dimension_t){ 0, 0 };
+  if (field == NULL) return (dimension_t) NULL_DIMENSION;
   return field->dimension;
 }
 

@@ -43,7 +43,7 @@ void delete_spy(Spy spy) {
 /*----------------------------------------------------------------------------*/
 
 position_t get_spy_position(Spy spy) {
-  if (spy == NULL) return (position_t) { 0, 0 };
+  if (spy == NULL) return (position_t) INVALID_POSITION;
 
   position_t item_position = get_item_position(spy->item);
   spy->number_uses++;

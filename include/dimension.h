@@ -15,4 +15,7 @@ struct dimension {
 };
 typedef struct dimension dimension_t;
 
+// Macros
+#define NULL_DIMENSION { 0, 0 }
+
 #endif // DIMENSION_H
