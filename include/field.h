@@ -17,7 +17,7 @@
 typedef struct field* Field;
 
 // Macros
-#define FIELD_MIN_DIMENSION (dimension_t){3,3}
+#define FIELD_MIN_DIMENSION (dimension_t) { 3, 3 }
 
 // Functions
 Field new_field(dimension_t dimension);

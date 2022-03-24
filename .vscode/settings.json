@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "position.h": "c",
+        "direction.h": "c",
+        "defender.h": "c",
+        "spy.h": "c",
+        "stdlib.h": "c"
+    }
+}

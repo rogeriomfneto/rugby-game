@@ -4,6 +4,7 @@
 // Standard headers
 #include <stdbool.h>
 #include <stddef.h>
+#include <limits.h>
 
 // Internal headers
 #include "direction.h"
@@ -18,6 +19,9 @@ struct position {
   size_t j;
 };
 typedef struct position position_t;
+
+// Macros
+#define INVALID_POSITION { ULONG_MAX, ULONG_MAX }
 
 // Functions
 bool equal_positions(position_t p1, position_t p2);
